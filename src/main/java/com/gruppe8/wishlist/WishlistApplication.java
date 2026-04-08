@@ -10,4 +10,5 @@ public class WishlistApplication {
         SpringApplication.run(WishlistApplication.class, args);
     }
 
+
 }
