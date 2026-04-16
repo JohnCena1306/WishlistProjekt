@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS wishlist(
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100),
     description VARCHAR(500),
-    date_of_creation DATE DEFAULT CURRENT_DATE,
+    date_of_creation DATE,
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
