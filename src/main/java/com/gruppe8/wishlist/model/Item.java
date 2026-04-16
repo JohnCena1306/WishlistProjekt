@@ -1,13 +1,13 @@
 package com.gruppe8.wishlist.model;
 
-public class ItemModel {
+public class Item {
 
     private String name;
     private String description;
     private double price;
     private String link;
 
-    public ItemModel(String name, String description, double price, String link){
+    public Item(String name, String description, double price, String link){
         this.name = name;
         this.description = description;
         this.price = price;
