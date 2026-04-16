@@ -4,27 +4,35 @@ import java.util.List;
 
 public class WishList {
 
-    private String name;
-    private List<Item> item;
+    private String title;
+    private int userId;
 
-public WishList(String name, List<Item> item){
-    this.name = name;
-    this.item = item;
+
+    public WishList(String title, int userId) {
+        this.title = title;
+        this.userId = userId;
+    }
+
+    public WishList() {
+    }
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+
 }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Item> getItem() {
-        return item;
-    }
-
-    public void setItem(List<Item> item) {
-        this.item = item;
-    }
-}
