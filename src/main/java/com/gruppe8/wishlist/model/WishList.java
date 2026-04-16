@@ -2,12 +2,12 @@ package com.gruppe8.wishlist.model;
 
 import java.util.List;
 
-public class WishlistModel {
+public class WishList {
 
     private String name;
-    private List<ItemModel> item;
+    private List<Item> item;
 
-public WishlistModel(String name, List<ItemModel> item){
+public WishList(String name, List<Item> item){
     this.name = name;
     this.item = item;
 }
@@ -20,11 +20,11 @@ public WishlistModel(String name, List<ItemModel> item){
         this.name = name;
     }
 
-    public List<ItemModel> getItem() {
+    public List<Item> getItem() {
         return item;
     }
 
-    public void setItem(List<ItemModel> item) {
+    public void setItem(List<Item> item) {
         this.item = item;
     }
 }

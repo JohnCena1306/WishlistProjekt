@@ -1,20 +1,18 @@
 package com.gruppe8.wishlist.model;
 
-import org.apache.catalina.User;
-
 import java.time.LocalDate;
 
-public class UserModel {
+public class User {
 
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
     private String email;
 
-    public UserModel() {
+    public User() {
     }
 
-    public UserModel(String firstName, String lastName, LocalDate birthDate, String email) {
+    public User(String firstName, String lastName, LocalDate birthDate, String email) {
 
         this.firstName = firstName;
         this.lastName = lastName;
