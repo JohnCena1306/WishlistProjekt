@@ -24,24 +24,38 @@ public class WishlistController {
     }
 
 
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
 
-    @GetMapping("/showwishlists")
+
+    @GetMapping("/show")
     public String showWishLists(Model model) {
-        model.addAttribute("Wishlist", wishlistRepository.findAll());
+        model.addAttribute("wishlists", wishlistRepository.findAll());
         return "wishlist";
     }
 
 
-    @PostMapping("/add")
+    @PostMapping("/save")
     public String saveWishList(@ModelAttribute("form") WishList form) {
 
         WishList wishList = new WishList(
                 form.getTitle(),
-                form.getUserId());
+                1);
 
         wishlistService.saveWishList(wishList);
-        return "redirect:/showwishlists";
+        return "redirect:/show";
     }
+
+    @GetMapping("/add")
+    public String addWishList(Model model) {
+        model.addAttribute("form", new WishList());
+        //model.addAttribute("allTags", service.getTags());
+        return "addwishlist";
+    }
+
+
 
 
 }
