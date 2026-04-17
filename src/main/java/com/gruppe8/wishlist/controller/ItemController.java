@@ -39,7 +39,7 @@ public class ItemController {
     @PostMapping ("/saveItem")
     public String saveAddItem(@ModelAttribute Item item) {
         if (item.getId() == 0){
-            itemService.saveItem(item);
+            itemService.addItem(item);
         }
             else{
             itemService.updateItem(item);

@@ -23,8 +23,8 @@ public class ItemService {
         return itemRepository.getItemById(id);
     }
 
-    public void saveItem (Item item){
-        itemRepository.saveItem(item);
+    public void addItem(Item item){
+        itemRepository.addItem(item);
     }
 
     public void updateItem (Item item){

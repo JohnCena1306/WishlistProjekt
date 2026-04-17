@@ -44,7 +44,7 @@ public class ItemRepository {
     }
 
 
-    public int saveItem(Item item) {
+    public int addItem(Item item) {
         String sql = "INSERT INTO wishlist_item (name, description, price, link) VALUES (?, ?, ?, ?)";
         return jdbcTemplate.update(sql, item.getName(), item.getDescription(), item.getPrice(), item.getLink());
     }
