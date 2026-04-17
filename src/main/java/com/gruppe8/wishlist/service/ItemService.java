@@ -19,8 +19,12 @@ public class ItemService {
         return itemRepository.getAllItems();
     }
 
-    public void saveItem (Item item){
-        itemRepository.saveItem(item);
+    public Item getItemById(int id){
+        return itemRepository.getItemById(id);
+    }
+
+    public void addItem(Item item){
+        itemRepository.addItem(item);
     }
 
     public void updateItem (Item item){

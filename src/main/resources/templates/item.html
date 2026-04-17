@@ -13,9 +13,17 @@
     <br>
     <hr>
     <p th:text="${item.getName()}"></p>
+
     <p th:text="${item.getDescription()}"></p>
+
     <p th:text="${item.getPrice()}"></p>
-    <a th:href="${item.getLink()}">Link</a>
+
+    <p> <a th:href="${item.getLink()}" target="_blank">Link</a>  </p>
+
+    <p> <a th:href="@{/items/deleteItem/{id}(id=${item.getId()})}">Slet ønske</a>   </p>
+
+    <p> <a th:href="@{/items/updateItem/{id}(id=${item.getId()})}">Rediger ønske </a></p>
+
     <hr>
     <br>
 

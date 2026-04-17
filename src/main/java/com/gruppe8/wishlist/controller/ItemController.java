@@ -4,8 +4,7 @@ import com.gruppe8.wishlist.model.Item;
 import com.gruppe8.wishlist.service.ItemService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,13 +23,34 @@ public class ItemController {
         return "item";
     }
 
-    @GetMapping ("/saveItem")
+    @GetMapping ("/showAddItem")
     public String showAddItem (Model model){
         model.addAttribute("item", new Item());
         return "saveItem";
     }
 
+    @GetMapping ("/items/updateItem/{id}")
+    public String updateItem(@PathVariable int id, Model model){
+        Item item = itemService.getItemById(id);
+        model.addAttribute("item", item);
+        return "saveItem";
+    }
 
+    @PostMapping ("/saveItem")
+    public String saveAddItem(@ModelAttribute Item item) {
+        if (item.getId() == 0){
+            itemService.addItem(item);
+        }
+            else{
+            itemService.updateItem(item);
+        }
+        return "redirect:/items";
+    }
 
+    @GetMapping ("/items/deleteItem/{id}")
+    public String deleteItem(@PathVariable int id){
+        itemService.deleteItemById(id);
+        return "redirect:/items";
+    }
 
 }

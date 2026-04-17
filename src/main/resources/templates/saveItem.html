@@ -9,5 +9,23 @@
 <div th:replace="fragments/header :: header"></div>
 <h2>Opret nyt ønske til 'wishlist title'</h2>
 
+<form th:action="@{/saveItem}" th:object="${item}" method="post">
+
+    <input type="hidden" id="id" th:field="*{id}">
+
+    <label for="name">Item name:</label>
+    <input type="text" id="name" th:field="*{name}"><br><br>
+
+    <label for="description">Item description:</label>
+    <input type="text" id="description" th:field="*{description}"><br><br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" th:field="*{price}"><br><br>
+
+    <label for="link">URL:</label>
+    <input type="text" id="link" th:field="*{link}"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>
