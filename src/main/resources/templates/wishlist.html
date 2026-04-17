@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlists</title>
+</head>
+<body>
+
+<h1>Wishlists</h1>
+
+<ul>
+    <li th:each="w : ${wishlists}" th:text="${w.title}"></li>
+</ul>
+
+</body>
+</html>
