@@ -23,9 +23,11 @@ public class WishlistController {
 
     }
 
+
+
     @GetMapping("/showwishlists")
     public String showWishLists(Model model) {
-        model.addAttribute("wishlists", wishlistRepository.findAll());
+        model.addAttribute("Wishlist", wishlistRepository.findAll());
         return "wishlist";
     }
 
