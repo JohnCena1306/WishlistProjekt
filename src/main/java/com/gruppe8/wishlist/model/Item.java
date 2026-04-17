@@ -17,6 +17,10 @@ public class Item {
         this.link = link;
     }
 
+    public Item(){
+
+    }
+
     public int getId() {
         return id;
     }
