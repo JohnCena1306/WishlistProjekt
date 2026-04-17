@@ -22,10 +22,10 @@ CREATE TABLE IF NOT EXISTS wishlist(
 
 CREATE TABLE IF NOT EXISTS wishlist_item(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100),
+    name VARCHAR(100),
     description VARCHAR(500),
     price DECIMAL(10,2),
-    product_url VARCHAR(500),
+    link VARCHAR(500),
     image_url VARCHAR(500),
     priority INT,
     status VARCHAR(50),
