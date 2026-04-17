@@ -9,9 +9,44 @@
 
 <h1>Ønskelister</h1>
 
-<ul>
-    <li th:each="w : ${wishlists}" th:text="${w.title}"></li>
-</ul>
+
+<table>
+
+    <thead>
+
+    <tr>
+        <th>Navn</th>
+        <th>Handling</th>
+    </tr>
+    </thead>
+
+
+    <tbody>
+    <tr th:each ="wishlist : ${wishlists}">
+        <td th:text="${wishlist.title}"></td>
+
+        <td>
+            <a>
+                <button type="button">Tilføj ønsker</button>
+            </a>
+            <a>
+                <button type="button">Se ønskeliste</button>
+            </a>
+            <a>
+                <button type="button">Slet</button>
+            </a>
+
+        </td>
+
+
+
+    </tr>
+
+    </tbody>
+
+</table>
+
+
 
 </body>
 </html>
