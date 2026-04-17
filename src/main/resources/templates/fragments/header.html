@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<header>
-    <meta charset="UTF-8">
-    <h1>MakeAWish</h1>
+<header th:fragment="header">
+
+
+    <h1>
+
+        <a href="/">MakeAWish</a>
+        </h1>
+
     <nav>
-
-    <a href="/showwishlists">Mine ønskelister</a>
-    <a href="/add">Tilføj ønskeliste</a>
-
+        <a th:href="@{/show}">Mine ønskelister</a>
+        <a th:href="@{/add}">Tilføj ønskeliste</a>
     </nav>
 </header>
-
-<body>
-
-</body>
-</html>
