@@ -19,6 +19,10 @@ public class ItemService {
         return itemRepository.getAllItems();
     }
 
+    public Item getItemById(int id){
+        return itemRepository.getItemById(id);
+    }
+
     public void saveItem (Item item){
         itemRepository.saveItem(item);
     }
