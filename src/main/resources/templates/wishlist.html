@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Wishlists</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout}">
+
 <body>
-
-<div th:replace="fragments/header :: header"></div>
-
-<h1>Ønskelister</h1>
+<div th:fragment="content">
+<h2>Ønskelister</h2>
 
 
 <table>
@@ -26,14 +23,14 @@
         <td th:text="${wishlist.title}"></td>
 
         <td>
-            <a>
-                <button type="button">Tilføj ønsker</button>
+            <a th:href="@{/showAddItem}" class="button">
+                Tilføj ønsker
             </a>
-            <a>
-                <button type="button">Se ønskeliste</button>
+            <a class="button">
+                Se ønskeliste
             </a>
-            <a>
-                <button type="button">Slet</button>
+            <a class="button">
+                Slet
             </a>
 
         </td>
@@ -47,6 +44,6 @@
 </table>
 
 
-
+</div>
 </body>
 </html>
