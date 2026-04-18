@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Items</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout}">
+
 <body>
-
-<div th:replace="fragments/header :: header"></div>
+<div th:fragment="content">
 <h2>Ønsker på 'wishlist title'</h2>
-<div th:each="item : ${items}">
+<div th:each="item : ${items}" class="items">
 
-    <br>
+
     <hr>
     <p th:text="${item.getName()}"></p>
 
@@ -23,11 +20,10 @@
     <p> <a th:href="@{/items/deleteItem/{id}(id=${item.getId()})}">Slet ønske</a>   </p>
 
     <p> <a th:href="@{/items/updateItem/{id}(id=${item.getId()})}">Rediger ønske </a></p>
-
     <hr>
-    <br>
+
 
 </div>
-
+</div>
 </body>
 </html>

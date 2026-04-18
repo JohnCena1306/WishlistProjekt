@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Make A Wish</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+
+<body>
+    <div class="background-wrapper">
+
+        <div th:replace="fragments/header :: header"></div>
+
+        <main>
+            <div th:insert="~{::content}"></div>
+        </main>
+    </div>
+</body>
+</html>

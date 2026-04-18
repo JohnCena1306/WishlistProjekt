@@ -1,0 +1,156 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: inter, sans-serif;
+    color: black;
+    background-image: url("images/background-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* background css style */
+.background-wrapper {
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: lighter;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3em;
+    font-weight: lighter;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+}
+
+/* website titel Make A Wish */
+#website-title {
+    font-size: 4rem;
+    font-weight: 200;
+    font-style: italic;
+}
+
+/* css styling item klasse */
+
+.items p {
+    margin: 0.5rem 0;
+}
+
+/* css button styles */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    border: none;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(254, 217, 255, 0.95) 30%,
+            rgba(254, 217, 255, 0.5) 65%,
+            rgba(254, 217, 255, 0) 100%
+    );
+
+    color: black;
+    font: inherit;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-decoration: none;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(254, 217, 255, 0.95) 45%,
+            rgba(254, 217, 255, 0.5) 70%,
+            rgba(254, 217, 255, 0) 100%
+    );
+    font-weight: bold;
+}
+
+.button-secondary {
+    background: none;
+    border: none;
+    padding: 0.7rem 0.5rem;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.button-secondary:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+a.header-button {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(254, 217, 255, 0.9) 20%,
+            rgba(254, 217, 255, 0.4) 50%,
+            rgba(254, 217, 255, 0) 100%
+    );
+    backdrop-filter: blur(4px);
+    border: none;
+    border-radius: 999px;
+    color: black;
+    text-decoration: none;
+}
+
+a.header-button:hover {
+    text-decoration: none;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(254, 217, 255, 0.9) 30%,
+            rgba(254, 217, 255, 0.4) 60%,
+            rgba(254, 217, 255, 0) 100%
+    );
+}
+
+a.button {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(254, 217, 255, 0.9) 20%,
+            rgba(254, 217, 255, 0.4) 50%,
+            rgba(254, 217, 255, 0) 100%
+    );
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button:hover {
+    text-decoration: none;
+    background: radial-gradient(
+            ellipse at center,
+            rgba(254, 217, 255, 0.9) 30%,
+            rgba(254, 217, 255, 0.4) 60%,
+            rgba(254, 217, 255, 0) 100%
+    );
+}
+
+/* css <a> links style */
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
