@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      th:replace="~{layout :: layout}"
+      xmlns:th="https://www.thymeleaf.org">
+
+<body>
+<div th:fragment="content">
+<h2>Opret konto</h2>
+
+<form th:action="@{/register}" th:object="${user}" method="post">
+
+    <label for="firstName">Navn:</label>
+    <input type="text"
+           id="firstName"
+           th:field="*{firstName}"><br><br>
+
+    <label for="lastName">Efternavn:</label>
+    <input type="text"
+           id="lastName"
+           th:field="*{lastName}"><br><br>
+
+    <label for="Email">Email:</label>
+    <input type="email"
+           placeholder="fx. DinEmail@gmail.com"
+           id="Email"
+           th:field="*{email}"><br><br>
+
+    <label for="Password">Adgangskode:</label>
+    <input type="password"
+           id="Password"
+           th:field="*{password}"><br><br>
+
+    <button class="button" type="submit">Opret bruger</button>
+    <a class="button-secondary" th:href="@{/}">Annuller</a>
+</form>
+</div>
+</body>
+</html>

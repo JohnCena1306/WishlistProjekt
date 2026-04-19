@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      th:replace="~{layout :: layout}"
+      xmlns:th="https://www.thymeleaf.org">
+
+<body>
+<div th:fragment="content">
+    <div th:if="${param.error}">
+        Ugyldigt email eller adgangskode.
+    </div>
+
+    <div th:if="${param.logout}">
+        Du er logget ud.
+    </div>
+
+    <h2>Log ind</h2>
+
+    <form th:action="@{/login}" method="post">
+        <input type="text" name="username" placeholder="Email"/>
+
+        <input type="password" name="password" placeholder="Adgangskode">
+
+        <button class="button" type="submit">Log Ind</button>
+        <a class="button" th:href="@{/register}">Opret Konto</a>
+        <a class="button-secondary" th:href="@{/}">Annuller</a>
+    </form>
+
+
+
+</div>
+</body>
+</html>
