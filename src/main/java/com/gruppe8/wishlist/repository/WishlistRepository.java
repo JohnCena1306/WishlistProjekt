@@ -19,12 +19,13 @@ public class WishlistRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private static class wishListRowMapper implements RowMapper<WishList> {
+    private static class WishListRowMapper implements RowMapper<WishList> {
 
         @Override
         public WishList mapRow(ResultSet rs, int rowNum) throws SQLException {
 
             return new WishList(
+                    rs.getInt("id"),
                     rs.getString("title"),
                     rs.getInt("user_id")
             );
@@ -39,6 +40,6 @@ public class WishlistRepository {
 
     public List<WishList> findAll() {
         String selectSql = "SELECT id, title, user_id FROM wishlist";
-        return jdbcTemplate.query(selectSql, new wishListRowMapper());
+        return jdbcTemplate.query(selectSql, new WishListRowMapper());
     }
 }

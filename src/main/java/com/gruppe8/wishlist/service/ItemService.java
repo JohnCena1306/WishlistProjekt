@@ -18,6 +18,9 @@ public class ItemService {
     public List<Item> getAllItems (){
         return itemRepository.getAllItems();
     }
+    public List<Item> findItemsByWishlistId(int wishlistId) {
+        return itemRepository.findItemsByWishlistId(wishlistId);
+    }
 
     public Item getItemById(int id){
         return itemRepository.getItemById(id);
@@ -34,5 +37,4 @@ public class ItemService {
     public void deleteItemById(int id){
         itemRepository.deleteItem(id);
     }
-
 }

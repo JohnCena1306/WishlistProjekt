@@ -26,7 +26,7 @@
             <a th:href="@{/showAddItem}" class="button">
                 Tilføj ønsker
             </a>
-            <a class="button">
+            <a th:href="@{/wishlist/{id}/items(id=${wishlist.id})}" class="button">
                 Se ønskeliste
             </a>
             <a class="button">
@@ -34,9 +34,6 @@
             </a>
 
         </td>
-
-
-
     </tr>
 
     </tbody>
