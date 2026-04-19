@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS users(
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    date_of_birth DATE
+    password VARCHAR(100) NOT NULL
 
 );
 CREATE TABLE IF NOT EXISTS wishlist(
