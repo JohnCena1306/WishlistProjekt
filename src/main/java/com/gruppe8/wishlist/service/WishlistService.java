@@ -20,4 +20,11 @@ public class WishlistService {
 
     }
 
+    public void deleteWishListByTitle(int id){
+
+        wishlistRepository.deleteWishListByTitle(id);
+    }
+
+
+
 }

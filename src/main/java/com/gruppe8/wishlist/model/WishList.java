@@ -7,6 +7,14 @@ public class WishList {
     private int id;
     private String title;
     private int userId;
+    private int id;
+
+
+    public WishList(int id, String title, int userId) {
+        this.title = title;
+        this.userId = userId;
+        this.id = id;
+    }
 
     public WishList() {
     }
@@ -25,6 +33,16 @@ public class WishList {
     }
     public int getId() {
         return id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    public WishList() {
+    }
 
     }
     public void setId(int id) {

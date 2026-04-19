@@ -42,4 +42,9 @@ public class WishlistRepository {
         String selectSql = "SELECT id, title, user_id FROM wishlist";
         return jdbcTemplate.query(selectSql, new WishListRowMapper());
     }
+
+    public void deleteWishListByTitle(int id){
+        String sql = "DELETE from wishlist where id = ?";
+        jdbcTemplate.update(sql, id);
+    }
 }
