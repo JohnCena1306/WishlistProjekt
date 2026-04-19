@@ -29,7 +29,7 @@
             <a class="button">
                 Se ønskeliste
             </a>
-            <a class="button">
+            <a th:href="@{/wishlist/deletewishlist/{id}(id=${wishlist.getId()})}" class="button">
                 Slet
             </a>
 
