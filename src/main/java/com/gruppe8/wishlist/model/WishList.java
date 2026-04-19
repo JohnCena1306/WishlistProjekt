@@ -4,23 +4,23 @@ import java.util.List;
 
 public class WishList {
 
+    private int id;
     private String title;
     private int userId;
-    private int id;
 
-
-    public WishList(int id, String title, int userId) {
-        this.title = title;
-        this.userId = userId;
-        this.id = id;
+    public WishList() {
     }
 
+    public WishList(int id, String title, int userId) {
+        this.id = id;
+        this.title = title;
+        this.userId = userId;
+    }
 
     public WishList(String title, int userId) {
         this.title = title;
         this.userId = userId;
     }
-
 
     public int getId() {
         return id;
@@ -28,8 +28,6 @@ public class WishList {
 
     public void setId(int id) {
         this.id = id;
-    }
-    public WishList() {
     }
 
     public String getTitle() {
@@ -47,7 +45,4 @@ public class WishList {
     public void setUserId(int userId) {
         this.userId = userId;
     }
-
-
 }
-
