@@ -25,6 +25,7 @@ public class WishlistRepository {
         public WishList mapRow(ResultSet rs, int rowNum) throws SQLException {
 
             return new WishList(
+                    rs.getInt("id"),
                     rs.getString("title"),
                     rs.getInt("user_id")
             );
@@ -40,5 +41,10 @@ public class WishlistRepository {
     public List<WishList> findAll() {
         String selectSql = "SELECT id, title, user_id FROM wishlist";
         return jdbcTemplate.query(selectSql, new wishListRowMapper());
+    }
+
+    public void deleteWishListByTitle(int id){
+        String sql = "DELETE from wishlist where id = ?";
+        jdbcTemplate.update(sql, id);
     }
 }
