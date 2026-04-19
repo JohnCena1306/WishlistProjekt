@@ -11,6 +11,15 @@
 
     <input type="hidden" id="id" th:field="*{id}">
 
+    <label for="wishlistId">Vælg ønskeliste:</label>
+    <select id="wishlistId" th:field="*{wishlistId}" required>
+        <option value="">-- Vælg ønskeliste --</option>
+        <option th:each="wishlist : ${wishlists}"
+                th:value="${wishlist.id}"
+                th:text="${wishlist.title}">
+        </option>
+    </select><br><br>
+
     <label for="name">Titel:</label>
     <input type="text"
            placeholder="Hvad ønsker du dig?"

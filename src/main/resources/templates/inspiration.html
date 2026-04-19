@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout}">
+
+<body>
+<div th:fragment="content">
+
+  <h2 style="letter-spacing:1px; text-transform:uppercase;">
+  High-End Inspiration</h2>
+
+<div style="margin-bottom:20px; display:flex; gap:10px; flex-wrap:wrap;">
+  <a th:href="@{/inspiration}" class="button">Alle</a>
+  <a th:href="@{/inspiration(tag='Luxury')}" class="button">Luxury</a>
+  <a th:href="@{/inspiration(tag='Tech')}" class="button">Tech</a>
+  <a th:href="@{/inspiration(tag='Fashion')}" class="button">Fashion</a>
+  <a th:href="@{/inspiration(tag='Lifestyle')}" class="button">Lifestyle</a>
+  <a th:href="@{/inspiration(tag='Travel')}" class="button">Travel</a>
+</div>
+
+  <div style="margin-bottom:20px; display:flex; gap:10px; flex-wrap:wrap:">
+    <a th:href="@{/inspiration(tag=${selectedTag}, sort='priceAsc')}" class="button">
+      Pris ↑
+    </a>
+    <a th:href="@{/inspiration(tag=${selectedTag}, sort='priceDesc')}" class="button">
+      Pris ↓
+    </a>
+
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Billede</th>
+      <th>Mærke</th>
+      <th>Produkt</th>
+      <th>Beskrivelse</th>
+      <th>Pris</th>
+      <th>Tag</th>
+      <th>Handling</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="inspiration : ${inspirations}">
+      <td>
+        <img th:src="${inspiration.imageUrl}"
+             th:alt="${inspiration.name}"
+             width="100"
+             style="border-radius:10px;">
+      </td>
+      <td th:text="${inspiration.brand}"></td>
+      <td th:text="${inspiration.name}"></td>
+      <td th:text="${inspiration.description}"></td>
+      <td th:text="${#numbers.formatDecimal(inspiration.price, 0, 'COMMA', 0, 'POINT')} + ' kr'"></td>
+      <td th:text="${inspiration.tag}"></td>
+      <td>
+        <a th:href="@{/showAddItem(
+    name=${inspiration.name},
+    description=${inspiration.description},
+    price=${inspiration.price})}"
+              class="button">
+        Tilføj
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+</body>
+</html>

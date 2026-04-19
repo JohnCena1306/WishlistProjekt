@@ -49,7 +49,14 @@ public class ItemRepository {
 
     public int addItem(Item item) {
         String sql = "INSERT INTO wishlist_item (name, description, price, link, wishlist_id) VALUES (?, ?, ?, ?, ?)";
-        return jdbcTemplate.update(sql, item.getName(), item.getDescription(), item.getPrice(), item.getLink(), item.getWishlistId());
+        return jdbcTemplate.update(
+                sql,
+                item.getName(),
+                item.getDescription(),
+                item.getPrice(),
+                item.getLink(),
+                item.getWishlistId()
+        );
     }
 
     public int updateItem (Item item){

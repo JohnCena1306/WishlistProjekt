@@ -23,7 +23,7 @@
         <td th:text="${wishlist.title}"></td>
 
         <td>
-            <a th:href="@{/showAddItem}" class="button">
+            <a th:href="@{/showAddItem(wishlistIdid=${wishlist.id})}" class="button">
                 Tilføj ønsker
             </a>
             <a th:href="@{/wishlist/{id}/items(id=${wishlist.id})}" class="button">

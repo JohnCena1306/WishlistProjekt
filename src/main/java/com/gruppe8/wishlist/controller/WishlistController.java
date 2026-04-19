@@ -52,18 +52,16 @@ public class WishlistController {
 
     @GetMapping("/add")
     public String addWishList(Model model) {
-        model.addAttribute("form", new WishList());
+        model.addAttribute("form" , new WishList());
         //model.addAttribute("allTags", service.getTags());
         return "addwishlist";
+
     }
 
     @GetMapping ("/wishlist/deletewishlist/{id}")
-    public String deleteItem(@PathVariable int id){
+    public String deleteItem(@PathVariable int id) {
         wishlistService.deleteWishListByTitle(id);
         return "redirect:/show";
     }
-
-
-
 
 }

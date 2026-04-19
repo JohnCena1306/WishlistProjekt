@@ -7,9 +7,9 @@ public class Item {
     private String description;
     private double price;
     private String link;
-    private int wishlistId;
+    private Integer wishlistId;
 
-    public Item(int id, String name, String description, double price, String link, int wishlistId){
+    public Item(int id, String name, String description, double price, String link, Integer wishlistId){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -61,10 +61,10 @@ public class Item {
     public void setLink(String link) {
         this.link = link;
     }
-    public int getWishlistId() {
+    public Integer getWishlistId() {
         return wishlistId;
     }
-    public void setWishlistId(int wishlistId) {
+    public void setWishlistId(Integer wishlistId) {
         this.wishlistId = wishlistId;
 
     }
