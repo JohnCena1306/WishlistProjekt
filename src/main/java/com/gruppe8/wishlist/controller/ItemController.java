@@ -23,12 +23,13 @@ public class ItemController {
         return "item";
     }
 
-    @GetMapping ("/showAddItem/{id}")
-    public String showAddItem (@PathVariable int id, Model model){
-        Item item = new Item();
-        item.setWishlistId(id);
-        model.addAttribute("item", item);
-        return "saveItem";
+    @GetMapping("/showAddItem/{id}")
+public String showAddItem(@PathVariable int id, Model model) {
+    Item item = new Item();
+    item.setWishlistId(id);
+    model.addAttribute("item", item);
+    return "saveItem";
+    
     }
     @GetMapping("/wishlist/{id}/items")
     public String showItemsByWishlist(@PathVariable int id, Model model) {
