@@ -24,12 +24,12 @@
 
         <td>
             <a th:href="@{/showAddItem/{id}(id=${wishlist.id})}" class="button">
-                Tilføj ønsker
+                Tilføj ønske til ønskeliste
             </a>
             <a th:href="@{/wishlist/{id}(id=${wishlist.id})}" class="button">
                 Se ønskeliste
             </a>
-            <a th:href="@{/wishlist/deletewishlist/{id}(id=${wishlist.getId()})}" class="button">
+            <a th:href="@{/wishlist/deletewishlist/{id}(id=${wishlist.id})}" class="button">
                 Slet
             </a>
 

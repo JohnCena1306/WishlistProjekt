@@ -61,11 +61,12 @@ public class Item {
     public void setLink(String link) {
         this.link = link;
     }
+
     public int getWishlistId() {
         return wishlistId;
     }
+
     public void setWishlistId(int wishlistId) {
         this.wishlistId = wishlistId;
-
     }
 }
