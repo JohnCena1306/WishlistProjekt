@@ -7,6 +7,7 @@ import com.gruppe8.wishlist.service.WishlistService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 
@@ -32,6 +33,7 @@ public class WishlistController {
 
     @GetMapping("/show")
     public String showWishLists(Model model) {
+
         model.addAttribute("wishlists", wishlistRepository.findAll());
         return "wishlist";
     }
@@ -53,6 +55,12 @@ public class WishlistController {
         model.addAttribute("form", new WishList());
         //model.addAttribute("allTags", service.getTags());
         return "addwishlist";
+    }
+
+    @GetMapping ("/wishlist/deletewishlist/{id}")
+    public String deleteItem(@PathVariable int id){
+        wishlistService.deleteWishListByTitle(id);
+        return "redirect:/show";
     }
 
 

@@ -7,14 +7,15 @@ public class Item {
     private String description;
     private double price;
     private String link;
+    private int wishlistId;
 
-
-    public Item(int id, String name, String description, double price, String link){
+    public Item(int id, String name, String description, double price, String link, int wishlistId){
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.link = link;
+        this.wishlistId = wishlistId;
     }
 
     public Item(){
@@ -59,5 +60,12 @@ public class Item {
 
     public void setLink(String link) {
         this.link = link;
+    }
+    public int getWishlistId() {
+        return wishlistId;
+    }
+    public void setWishlistId(int wishlistId) {
+        this.wishlistId = wishlistId;
+
     }
 }

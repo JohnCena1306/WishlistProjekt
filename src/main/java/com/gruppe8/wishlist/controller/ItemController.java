@@ -23,10 +23,19 @@ public class ItemController {
         return "item";
     }
 
-    @GetMapping ("/showAddItem")
-    public String showAddItem (Model model){
-        model.addAttribute("item", new Item());
+    @GetMapping ("/showAddItem/{id}")
+    public String showAddItem (@PathVariable int id, Model model){
+        Item item = new Item();
+        item.setWishlistId(id);
+        model.addAttribute("item", item);
         return "saveItem";
+    }
+    @GetMapping("/wishlist/{id}/items")
+    public String showItemsByWishlist(@PathVariable int id, Model model) {
+    model.addAttribute("items", itemService.findItemsByWishlistId((id)));
+    model.addAttribute("wishlistId", id);
+    return "item";
+
     }
 
     @GetMapping ("/items/updateItem/{id}")
@@ -44,7 +53,7 @@ public class ItemController {
             else{
             itemService.updateItem(item);
         }
-        return "redirect:/items";
+        return "redirect:/wishlist/" + item.getWishlistId() + "/items";
     }
 
     @GetMapping ("/items/deleteItem/{id}")
