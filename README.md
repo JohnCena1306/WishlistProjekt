@@ -1,6 +1,6 @@
 # Wishlist Projekt #
 
-En webbaseret databaseapplikation, der giver brugere muligheden for at oprette og administrere en digital ønskeseddel.
+En webbaseret databaseapplikation, der giver brugere muligheden for at oprette og administrere en digital ønskeliste.
 
 ## Features ##
 
@@ -8,10 +8,10 @@ En webbaseret databaseapplikation, der giver brugere muligheden for at oprette o
 - Opret konto
 - Log ind
 
-### Ønskesedler ###
-- Opret ønskeseddel
-- Rediger ønskeseddel
-- Slet ønskeseddel
+### Ønskelister ###
+- Opret ønskeliste
+- Rediger ønskeliste
+- Slet ønskeliste
 
 ### Ønsker ###
 - Tilføj ønsker med:
