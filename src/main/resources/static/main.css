@@ -208,3 +208,16 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item-box {
+    width: 200px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
