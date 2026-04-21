@@ -5,36 +5,36 @@
 <body>
 <div th:fragment="content">
 
-<h2 class="sub-title">Opret nyt ønske til 'wishlist title'</h2>
+    <h2 class="sub-title">Opret et nyt ønske til din ønskeliste!</h2>
 
 <form th:action="@{/saveItem}" th:object="${item}" method="post">
 
     <input type="hidden" id="id" th:field="*{id}">
     <input type="hidden" id="wishlistId" th:field="*{wishlistId}">
 
-    <label for="name">Titel:</label>
+    <div class="form-row"><label for="name">Titel:</label>
     <input type="text"
            placeholder="Hvad ønsker du dig?"
            id="name"
-           th:field="*{name}"><br><br>
+           th:field="*{name}"></div>
 
-    <label for="description">Ønske beskrivelse:</label>
+    <divs class="form-row"><label for="description">Ønske beskrivelse:</label>
     <input type="text"
            placeholder="Ekstra info (fx farve, model)"
            id="description"
-           th:field="*{description}"><br><br>
+           th:field="*{description}"></divs>
 
-    <label for="price">Pris:</label>
-    <input type="number"
+    <div class="form-row"><label for="price">Pris:</label>
+        <input type="number"
            placeholder="Ca. pris"
            id="price"
-           th:field="*{price}"><br><br>
+           th:field="*{price}"></div>
 
-    <label for="link">Produktlink:</label>
+    <div class="form-row"><label for="link">Produktlink:</label>
     <input type="text"
            placeholder="Indsæt link til produkt"
            id="link"
-           th:field="*{link}"><br><br>
+           th:field="*{link}"></div>
 
     <button class="button" type="submit">Gem</button>
     <a class="button-secondary" th:href="@{/}">Annuller</a>
