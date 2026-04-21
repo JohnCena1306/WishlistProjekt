@@ -59,8 +59,11 @@ public class ItemController {
 
     @GetMapping ("/items/deleteItem/{id}")
     public String deleteItem(@PathVariable int id){
+        Item item = itemService.getItemById(id);
+        int wishlistId = item.getWishlistId();
+
         itemService.deleteItemById(id);
-        return "redirect:/items";
+        return "redirect:/wishlist/" + wishlistId + "/items";
     }
 
     @GetMapping("/wishlist/{id}")
