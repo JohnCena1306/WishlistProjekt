@@ -4,9 +4,11 @@
 
 <body>
 <div th:fragment="content">
-<h2 class="sub-title">Ønsker på din ønskeliste'</h2>
-<div th:each="item : ${items}" class="items">
+  <h2 class="sub-title">Ønskeliste</h2>
 
+
+  <div
+          th:each="item : ${items}" class="items">
 
     <hr>
     <p th:text="${item.getName()}"></p>
@@ -22,8 +24,8 @@
     <p> <a th:href="@{/items/updateItem/{id}(id=${item.getId()})}">Rediger ønske </a></p>
     <hr>
 
+  </div>
 
 </div>
-</div>
+
 </body>
-</html>

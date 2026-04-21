@@ -1,6 +1,7 @@
 package com.gruppe8.wishlist.controller;
 
 import com.gruppe8.wishlist.model.Item;
+import com.gruppe8.wishlist.repository.ItemRepository;
 import com.gruppe8.wishlist.service.ItemService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,6 +61,17 @@ public class ItemController {
     public String deleteItem(@PathVariable int id){
         itemService.deleteItemById(id);
         return "redirect:/items";
+    }
+
+    @GetMapping("/wishlist/{id}")
+    public String showWishList(@PathVariable int id, Model model) {
+
+        List<Item> items = itemService.findItemsByWishlistId(id);
+
+        model.addAttribute("items", items);
+
+        return "wishlist-items";
+
     }
 
 }
