@@ -3,6 +3,13 @@ html, body {
     padding: 0;
 }
 
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
 .content {
     text-align: center;
 }
@@ -26,30 +33,26 @@ h1 {
 }
 
 .sub-title {
-    font-size: 4em;
+    font-size: 2em;
     font-family: "Bodoni MT", sans-serif;
     font-weight: lighter;
     text-align: center;
     position: relative;
-    bottom: 20px;
 }
 
 /* website titel Make A Wish */
 #website-title {
-    text-align: left;
-    font-size: 2rem;
-    font-weight: 200;
-    font-style: italic;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
     position: relative;
-    left: 40px;
 }
 
 #website-creator {
     font-family: Didot, sans-serif;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     font-style: italic;
-    margin-left: 40px;
     margin-top: -20px;
 }
 
@@ -113,14 +116,18 @@ table {
     margin: 0 auto;
 }
 
-.form-row{
+.form-row {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
 
 .form-row label {
-    width: 180px;
+    width: 150px;
+}
+
+.form-row input {
+    flex: 1;
 }
 
 input {
