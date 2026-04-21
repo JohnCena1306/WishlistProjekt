@@ -3,29 +3,40 @@
       th:replace="~{layout :: layout}">
 
 <body>
+
+
 <div th:fragment="content">
-  <h2 class="sub-title">Ønskeliste</h2>
+
+  <h2 class="sub-title">Ønsker på din ønskeliste</h2>
 
 
-  <div
-          th:each="item : ${items}" class="items">
+  <div class="items-container">
 
-    <hr>
-    <p th:text="${item.getName()}"></p>
+    <div th:each="item : ${items}" class="item-box">
 
-    <p th:text="${item.getDescription()}"></p>
+      <p th:text="${item.name}"></p>
 
-    <p th:text="${item.getPrice()}"></p>
+      <p th:text="${item.description}"></p>
 
-    <p> <a th:href="${item.getLink()}" target="_blank">Link</a>  </p>
+      <p th:text="${item.price}"></p>
 
-    <p> <a th:href="@{/items/deleteItem/{id}(id=${item.getId()})}">Slet ønske</a>   </p>
+      <p>
+        <a th:href="${item.link}" target="_blank">Link</a>
+      </p>
 
-    <p> <a th:href="@{/items/updateItem/{id}(id=${item.getId()})}">Rediger ønske </a></p>
-    <hr>
+      <p>
+        <a th:href="@{/items/deleteItem/{id}(id=${item.id})}">Slet</a>
+      </p>
+
+      <p>
+        <a th:href="@{/items/updateItem/{id}(id=${item.id})}">Rediger</a>
+      </p>
+
+    </div>
 
   </div>
 
 </div>
 
 </body>
+</html>

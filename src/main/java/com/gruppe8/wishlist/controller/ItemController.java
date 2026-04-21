@@ -21,7 +21,7 @@ public class ItemController {
     @GetMapping ("/items")
     public String showItems (Model model){
         model.addAttribute("items", itemService.getAllItems());
-        return "item";
+        return "wishlist-items";
     }
 
     @GetMapping ("/showAddItem/{id}")
@@ -35,7 +35,7 @@ public class ItemController {
     public String showItemsByWishlist(@PathVariable int id, Model model) {
     model.addAttribute("items", itemService.findItemsByWishlistId((id)));
     model.addAttribute("wishlistId", id);
-    return "item";
+    return "wishlist-items";
 
     }
 
