@@ -7,32 +7,32 @@
 <div th:fragment="content">
 <h2 class="sub-title">Opret konto</h2>
 
-<form th:action="@{/register}" th:object="${user}" method="post">
+    <form th:action="@{/register}" th:object="${user}" method="post">
 
-    <label for="firstName">Navn:</label>
-    <input type="text"
-           id="firstName"
-           th:field="*{firstName}"><br><br>
+        <div class="form-row">
+            <label for="firstName">Navn:</label>
+            <input type="text" id="firstName" th:field="*{firstName}">
+        </div>
 
-    <label for="lastName">Efternavn:</label>
-    <input type="text"
-           id="lastName"
-           th:field="*{lastName}"><br><br>
+        <div class="form-row">
+            <label for="lastName">Efternavn:</label>
+            <input type="text" id="lastName" th:field="*{lastName}">
+        </div>
 
-    <label for="Email">Email:</label>
-    <input type="email"
-           placeholder="fx. DinEmail@gmail.com"
-           id="Email"
-           th:field="*{email}"><br><br>
+        <div class="form-row">
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" th:field="*{email}">
+        </div>
 
-    <label for="Password">Adgangskode:</label>
-    <input type="password"
-           id="Password"
-           th:field="*{password}"><br><br>
+        <div class="form-row">
+            <label for="Password">Adgangskode:</label>
+            <input type="password" id="Password" th:field="*{password}">
+        </div>
 
-    <button class="button" type="submit">Opret bruger</button>
-    <a class="button-secondary" th:href="@{/}">Annuller</a>
-</form>
+        <button class="button" type="submit">Opret bruger</button>
+        <a class="button-secondary" th:href="@{/}">Annuller</a>
+
+    </form>
 </div>
 </body>
 </html>
