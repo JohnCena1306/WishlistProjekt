@@ -25,6 +25,7 @@ public class ItemController {
         return "item";
     }
 
+<<<<<<< HEAD
     @GetMapping ( "/showAddItem" )
     public String showAddItem(
             @RequestParam(required = false) Integer wishlistId,
@@ -32,6 +33,20 @@ public class ItemController {
             @RequestParam(required = false) String description ,
             @RequestParam(required = false) Double price ,
             Model model ) {
+=======
+    @GetMapping ("/showAddItem/{id}")
+    public String showAddItem (@PathVariable int id, Model model){
+        Item item = new Item();
+        item.setWishlistId(id);
+        model.addAttribute("item", item);
+        return "saveItem";
+    }
+    @GetMapping("/wishlist/{id}/items")
+    public String showItemsByWishlist(@PathVariable int id, Model model) {
+    model.addAttribute("items", itemService.findItemsByWishlistId((id)));
+    model.addAttribute("wishlistId", id);
+    return "item";
+>>>>>>> origin/id
 
         Item item = new Item();
 
