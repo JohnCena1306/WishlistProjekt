@@ -7,19 +7,24 @@
 
 <div th:fragment="content">
 
-  <h2 class="sub-title">Ønsker på din ønskeliste</h2>
+  <h2>Ønsker på din ønskeliste</h2>
 
+<p th:if="${param.succes}" style="color:green; font-weight: bold;"> Ønske gemt!</p>
 
   <div class="items-container">
 
     <div th:each="item : ${items}" class="item-box">
 
+      <img th:if="${item.imageUrl != null}"
+           th:src="${item.imageUrl}"
+           alt="Produkt billede"
+           style="max-width: 150px; display:block; margin-bottom:10px;">
+
       <p th:text="${item.name}"></p>
 
       <p th:text="${item.description}"></p>
 
-      <p th:text="${item.price}"></p>
-
+      <p th:text="${#numbers.formatDecimal(item.price, 0, 'POINT', 0, 'COMMA')} + ' kr'"></p>
       <p>
         <a th:href="${item.link}" target="_blank">Link</a>
       </p>

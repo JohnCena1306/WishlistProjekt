@@ -9,9 +9,7 @@
 <body>
     <div class="background-wrapper">
 
-        <div th:replace="fragments/header :: header"></div>
-
-        <main>
+        <div th:replace="~{fragments/header :: header}"></div>        <main>
             <div class="content" th:insert="~{::content}"></div>
         </main>
     </div>
