@@ -64,13 +64,8 @@ public class Item {
     public Integer getWishlistId() {
         return wishlistId;
     }
+
     public void setWishlistId(Integer wishlistId) {
-
-    public int getWishlistId() {
-        return wishlistId;
-    }
-
-    public void setWishlistId(int wishlistId) {
         this.wishlistId = wishlistId;
     }
 }
