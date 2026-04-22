@@ -7,15 +7,25 @@ public class Item {
     private String description;
     private double price;
     private String link;
-    private int wishlistId;
+    private Integer wishlistId;
+    private String imageUrl;
 
-    public Item(int id, String name, String description, double price, String link, int wishlistId){
+    public Item(int id, String name, String description, double price, String link, Integer wishlistId, String imageUrl){
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.link = link;
         this.wishlistId = wishlistId;
+        this.imageUrl = imageUrl;
+    }
+    public Item(int id, String name, String description, double price, String link, Integer wishlistId) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.link = link;
+        this. wishlistId = wishlistId;
     }
 
     public Item(){
@@ -62,11 +72,17 @@ public class Item {
         this.link = link;
     }
 
-    public int getWishlistId() {
+    public Integer getWishlistId() {
         return wishlistId;
     }
 
-    public void setWishlistId(int wishlistId) {
+    public void setWishlistId(Integer wishlistId) {
         this.wishlistId = wishlistId;
+    }
+    public String getImageUrl() {
+        return imageUrl;
+    }
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

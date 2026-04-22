@@ -1,13 +1,13 @@
- <header th:fragment="header">
+<header th:fragment="header">
     <h1>
-    <a id="website-title" href="/">Make A Wish</a>
+        <a id="website-title" th:href="@{/}">Make A Wish</a>
     </h1>
 
-     <h5 id="website-creator">Af Salahudin, Daniel, Markus, og Oliver</h5>
-    <nav>
-
-    <a class="header-button" href="/show">Mine ønskelister</a>
-    <a class="header-button" href="/add">Tilføj ønskeliste</a>
-
+    <nav style="display:flex; gap:15px;">
+        <a class="header-button" th:href="@{/show}">Mine ønskelister</a>
+        <a class="header-button" th:href="@{/add}">Tilføj ønskeliste</a>
+        <a class="header-button" th:href="@{/items}">Vis ønsker</a>
+        <a class="header-button" th:href="@{/showAddItem}">Opret ønske</a>
+        <a class="header-button" th:href="@{/inspiration}">Inspiration</a>
     </nav>
-    </header>
+</header>

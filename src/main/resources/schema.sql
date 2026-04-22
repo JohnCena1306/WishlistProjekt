@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS wishlist_item(
     description VARCHAR(500),
     price DECIMAL(10,2),
     link VARCHAR(500),
+    image_url VARCHAR(500),
     wishlist_id INT,
     FOREIGN KEY(wishlist_id) REFERENCES wishlist(id));
 

@@ -5,6 +5,8 @@ import com.gruppe8.wishlist.repository.ItemRepository;
 import com.gruppe8.wishlist.repository.WishlistRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class WishlistService {
 
@@ -28,6 +30,7 @@ public class WishlistService {
         itemRepository.deleteByWishListId(id);
         wishlistRepository.deleteWishList(id);
     }
-
-
+    public List <WishList> findAllWishlists() {
+        return wishlistRepository.findAll();
+    }
 }

@@ -3,6 +3,7 @@ package com.gruppe8.wishlist.controller;
 import com.gruppe8.wishlist.model.Item;
 import com.gruppe8.wishlist.repository.ItemRepository;
 import com.gruppe8.wishlist.service.ItemService;
+import com.gruppe8.wishlist.service.WishlistService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +14,12 @@ import java.util.List;
 public class ItemController {
 
     private final ItemService itemService;
+    private final WishlistService wishlistService;
 
-    public ItemController (ItemService itemService){
+    public ItemController ( ItemService itemService , WishlistService wishlistService ){
         this.itemService = itemService;
+        this.wishlistService = wishlistService;
+
     }
 
     @GetMapping ("/items")
@@ -24,11 +28,36 @@ public class ItemController {
         return "wishlist-items";
     }
 
-    @GetMapping ("/showAddItem/{id}")
-    public String showAddItem (@PathVariable int id, Model model){
+    @GetMapping("/showAddItem")
+    public String showAddItem(
+            @RequestParam(required = false) Integer wishlistId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String description,
+            @RequestParam(required = false) Double price,
+            @RequestParam(required = false) String imageUrl,
+            Model model) {
+
         Item item = new Item();
-        item.setWishlistId(id);
+
+        if (wishlistId != null) {
+            item.setWishlistId(wishlistId);
+        }
+        if (name != null) {
+            item.setName(name);
+        }
+        if (description != null) {
+            item.setDescription(description);
+        }
+        if (price != null) {
+            item.setPrice(price);
+        }
+        if (imageUrl != null) {
+            item.setImageUrl(imageUrl);
+
+        }
+
         model.addAttribute("item", item);
+        model.addAttribute("wishlists", wishlistService.findAllWishlists());
         return "saveItem";
     }
     @GetMapping("/wishlist/{id}/items")
@@ -43,6 +72,7 @@ public class ItemController {
     public String updateItem(@PathVariable int id, Model model){
         Item item = itemService.getItemById(id);
         model.addAttribute("item", item);
+        model.addAttribute("wishlists", wishlistService.findAllWishlists());
         return "saveItem";
     }
 
@@ -54,7 +84,7 @@ public class ItemController {
             else{
             itemService.updateItem(item);
         }
-        return "redirect:/wishlist/" + item.getWishlistId() + "/items";
+        return "redirect:/wishlist/" + item.getWishlistId() + "/items?succes=true";
     }
 
     @GetMapping ("/items/deleteItem/{id}")
