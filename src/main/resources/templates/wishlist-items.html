@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout}">
+
+<body>
+
+
+<div th:fragment="content">
+
+  <h2 class="sub-title">Ønsker på din ønskeliste</h2>
+
+
+  <div class="items-container">
+
+    <div th:each="item : ${items}" class="item-box">
+
+      <p th:text="${item.name}"></p>
+
+      <p th:text="${item.description}"></p>
+
+      <p th:text="${item.price}"></p>
+
+      <p>
+        <a th:href="${item.link}" target="_blank">Link</a>
+      </p>
+
+      <p>
+        <a th:href="@{/items/deleteItem/{id}(id=${item.id})}">Slet</a>
+      </p>
+
+      <p>
+        <a th:href="@{/items/updateItem/{id}(id=${item.id})}">Rediger</a>
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

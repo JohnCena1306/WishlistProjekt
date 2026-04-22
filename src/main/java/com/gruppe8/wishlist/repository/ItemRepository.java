@@ -47,6 +47,13 @@ public class ItemRepository {
     return  jdbcTemplate.query(sql, new ItemRowMapper(), wishlistId);
     }
 
+    public int deleteByWishListId(int wishlistId) {
+
+        String sql = "DELETE from wishlist_item where wishlist_id = ?";
+
+        return jdbcTemplate.update(sql, wishlistId);
+    }
+
     public int addItem(Item item) {
         String sql = "INSERT INTO wishlist_item (name, description, price, link, wishlist_id) VALUES (?, ?, ?, ?, ?)";
         return jdbcTemplate.update(

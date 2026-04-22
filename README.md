@@ -1,9 +1,45 @@
-Vi har fået til opgave at udarbejde en digital ønskeseddel, hvor man kan indsætte ønsker og dele dem med andre.
+# Wishlist Projekt #
 
-De funktionelle krav til applikationen er inddelt således:
-1. Minimumskrav, som alle grupper bør implementere:
-    At man som bruger kan lave en digital ønskeseddel
-2. Krav, som vil være ønskelige at få med, men som ikke er obligatoriske:
-    At man som bruger kan dele sin ønskeseddel med andre
-3. Krav, som vi ikke forventer at mange grupper får tid til at implementere:
-   At andre brugere kan reservere ønsker på ønskesedlen
+En webbaseret databaseapplikation, der giver brugere muligheden for at oprette og administrere en digital ønskeliste.
+
+## Features ##
+
+### Bruger ###
+- Opret konto
+- Log ind
+
+### Ønskelister ###
+- Opret ønskeliste
+- Rediger ønskeliste
+- Slet ønskeliste
+
+### Ønsker ###
+- Tilføj ønsker med:
+  - Titel
+  - Beskrivelse
+  - Pris
+  - Produktlink
+- Rediger ønsker
+- Slet ønsker
+
+## Teknologier ##
+
+- Java 21
+- Spring Boot
+- Spring Security
+- Thymeleaf
+- HTML & CSS
+- MySQL
+
+## Installation ##
+
+1. git clone https://github.com/JohnCena1306/WishlistProjekt.git 
+2. cd WishlistProjekt
+3. mvn spring-boot:run
+
+## Brug ##
+Åbn i browser:
+http://localhost:8080
+
+## Bidrag ##
+Se CONTRIBUTING.md for retningslinjer

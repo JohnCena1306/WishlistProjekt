@@ -1,6 +1,7 @@
 package com.gruppe8.wishlist.controller;
 
 import com.gruppe8.wishlist.model.Item;
+import com.gruppe8.wishlist.repository.ItemRepository;
 import com.gruppe8.wishlist.service.ItemService;
 import com.gruppe8.wishlist.service.WishlistService;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,10 @@ public class ItemController {
     public String showItems( Model model ) {
         model.addAttribute("items" , itemService.getAllItems());
         return "item";
+    @GetMapping ("/items")
+    public String showItems (Model model){
+        model.addAttribute("items", itemService.getAllItems());
+        return "wishlist-items";
     }
 
     @GetMapping ( "/showAddItem" )
@@ -58,6 +63,11 @@ public class ItemController {
         model.addAttribute("items" , itemService.findItemsByWishlistId(( id )));
         model.addAttribute("wishlistId" , id);
         return "item";
+    @GetMapping("/wishlist/{id}/items")
+    public String showItemsByWishlist(@PathVariable int id, Model model) {
+    model.addAttribute("items", itemService.findItemsByWishlistId((id)));
+    model.addAttribute("wishlistId", id);
+    return "wishlist-items";
 
     }
 
@@ -84,8 +94,24 @@ public class ItemController {
 
     @GetMapping ( "/items/deleteItem/{id}" )
     public String deleteItem( @PathVariable int id ) {
+    @GetMapping ("/items/deleteItem/{id}")
+    public String deleteItem(@PathVariable int id){
+        Item item = itemService.getItemById(id);
+        int wishlistId = item.getWishlistId();
+
         itemService.deleteItemById(id);
-        return "redirect:/items";
+        return "redirect:/wishlist/" + wishlistId + "/items";
+    }
+
+    @GetMapping("/wishlist/{id}")
+    public String showWishList(@PathVariable int id, Model model) {
+
+        List<Item> items = itemService.findItemsByWishlistId(id);
+
+        model.addAttribute("items", items);
+
+        return "wishlist-items";
+
     }
 
 }

@@ -1,7 +1,9 @@
 package com.gruppe8.wishlist.controller;
 
 
+import com.gruppe8.wishlist.model.Item;
 import com.gruppe8.wishlist.model.WishList;
+import com.gruppe8.wishlist.repository.ItemRepository;
 import com.gruppe8.wishlist.repository.WishlistRepository;
 import com.gruppe8.wishlist.service.WishlistService;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
+import com.gruppe8.wishlist.repository.ItemRepository;
+import com.gruppe8.wishlist.service.ItemService;
+
+
+import java.util.List;
 
 @Controller
 public class WishlistController {
@@ -63,5 +70,10 @@ public class WishlistController {
         wishlistService.deleteWishListByTitle(id);
         return "redirect:/show";
     }
+
+
+
+
+
 
 }
